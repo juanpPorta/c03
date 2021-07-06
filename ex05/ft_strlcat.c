@@ -6,13 +6,13 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 23:10:09 by jporta            #+#    #+#             */
-/*   Updated: 2021/07/06 00:42:22 by jporta           ###   ########.fr       */
+/*   Updated: 2021/07/06 16:16:26 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<unistd.h>
-#include<stdio.h>
-#include <string.h>
+#include  <unistd.h>
+
 unsigned int	ft_count(char *str)
 {
 	unsigned int	count;
@@ -28,19 +28,19 @@ unsigned int	ft_count(char *str)
 
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	unsigned int	c;
-	unsigned int	d;
+	unsigned int	a;
+	unsigned int	b;
 
-	c = ft_count(dest);
-	if (size <= c)
-		return (size + c);
-	d = 0;
-	while (src[d] != '\0' && c < size - 1)
+	if (size <= ft_count(dest))
+		return (size + ft_count(src));
+	a = ft_count(dest);
+	b = 0;
+	while (src[b] != '\0' && a + 1 < size)
 	{
-		dest[c] = src[d];
-		c++;
-		d++;
+		dest[a] = src[b];
+		a++;
+		b++;
 	}
-	dest[c] = '\0';
-	return (c + ft_count(&src[d]));
+	dest[a] = '\0';
+	return (ft_count(dest) + ft_count(&src[b]));
 }

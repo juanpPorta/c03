@@ -6,7 +6,7 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 20:48:37 by jporta            #+#    #+#             */
-/*   Updated: 2021/07/05 20:48:57 by jporta           ###   ########.fr       */
+/*   Updated: 2021/07/06 16:18:16 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,17 @@
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	 unsigned int	i;
+	unsigned int	c;
+	int				diff;
 
-	i = 0;
-	while (s1[i] == s2[i] && (s1[i] != '\0' && s2[i] != '\0') && i < n)
+	c = 0;
+	diff = 0;
+	while ((c < n) && !diff && (s1[c] != '\0') && (s2[c] != '\0'))
 	{
-		i++;
+		diff = (unsigned char)s1[c] - (unsigned char)s2[c];
+		c++;
 	}
-	return (s1[i] - s2[i]);
+	if (c < n && !diff && (s1[c] == '\0' || s2[c] == '\0'))
+		diff = (unsigned char)s1[c] - (unsigned char)s2[c];
+	return (diff);
 }

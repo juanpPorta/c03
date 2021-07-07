@@ -6,37 +6,27 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 18:10:44 by jporta            #+#    #+#             */
-/*   Updated: 2021/07/06 16:19:43 by jporta           ###   ########.fr       */
+/*   Updated: 2021/07/07 13:13:26 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<unistd.h>
 #include<stdio.h>
 
-int	ft_strlen(char *str)
-{
-	int	counter;
-
-	counter = 0;
-	while (*str != '\0')
-	{
-		counter++;
-		str++;
-	}
-	return (counter);
-}
-
 char	*ft_strcat(char *dest, char *src)
 {
-	int	c;
+	int	a;
+	int	b;
 
-	c = ft_strlen(dest);
-	while (*src != '\0')
+	a = 0;
+	b = 0;
+	while (dest[a] != '\0')
+		a++;
+	while (src[b] != '\0' )
 	{
-		dest[c] = *src;
-		c++;
-		src++;
+		dest[a + b] = src[b];
+		b++;
 	}
-	dest[c] = '\0';
+	dest[a + b] = '\0';
 	return (dest);
 }

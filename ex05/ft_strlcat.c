@@ -6,11 +6,10 @@
 /*   By: jporta <jporta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 23:10:09 by jporta            #+#    #+#             */
-/*   Updated: 2021/07/06 16:16:26 by jporta           ###   ########.fr       */
+/*   Updated: 2021/07/07 13:14:17 by jporta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
 #include  <unistd.h>
 
 unsigned int	ft_count(char *str)
